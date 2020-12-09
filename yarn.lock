@@ -5002,6 +5002,11 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
+fontsource-rakkas@^3.0.10:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/fontsource-rakkas/-/fontsource-rakkas-3.0.10.tgz#93c25ac963d86023b508d3b6ca0ac272d844d066"
+  integrity sha512-gOf27qq5XjQQuqGPf2AEK9SGexRNyI1exheT2N1f4RZ6OT47qC8kcbrz5b3wEdQYWvVR+2c+MlEyJzgEXlIK7A==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"

@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
+import SearchBox from './components/SearchBox/SearchBox';
+import TeamList from './components/TeamList/TeamList';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			fixtures: [
-				{
-					name: 'arsenal',
-					id: 1,
-				},
-				{
-					name: 'chelsea',
-					id: 2,
-				},
-				{
-					name: 'man-city',
-					id: 3,
-				},
-			],
+			teams: [],
+			searchBox: '',
 		};
 	}
 
+	componentDidMount() {
+		fetch(
+			'https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328'
+		)
+			.then((response) => response.json())
+			.then((val) => this.setState({ teams: val.teams }));
+	}
+
+	handleSearchChange = (e) => this.setState({ searchBox: e.target.value });
+
 	render() {
+		const { teams, searchBox } = this.state;
+		const filteredTeams = teams.filter((team) =>
+			team.strTeam.toLowerCase().includes(searchBox.toLowerCase())
+		);
 		return (
-			<div>
-				{this.state.fixtures.map((fixture) => (
-					<h1 key={fixture.id}>{fixture.name}</h1>
-				))}
+			<div className='App'>
+				<h1>EPL Teams</h1>
+				<SearchBox
+					handleChange={this.handleSearchChange}
+					placeholder='Search Team'
+				/>
+				<TeamList filteredTeams={filteredTeams} />
 			</div>
 		);
 	}
